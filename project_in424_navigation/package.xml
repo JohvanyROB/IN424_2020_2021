@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>project_in424_navigation</name>
+  <version>0.0.0</version>
+  <description>The project_in424_navigation package</description>
+
+  <maintainer email="johvany@todo.todo">johvany</maintainer>
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+
+  </export>
+</package>

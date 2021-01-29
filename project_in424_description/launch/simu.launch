@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+ <arg name="world" default="projet4Ac"/>
+
+  <!-- <param name="/use_sim_time" value="true" /> -->
+
+  <!-- start world -->
+  <param name="use_sim_time" value="true" />
+	<include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find project_in424_description)/worlds/$(arg world).world"/>
+    <arg name="paused" value="false"/>
+		<arg name="use_sim_time" value="true"/>
+		<arg name="gui" value="true"/>
+		<arg name="headless" value="false"/>
+		<arg name="debug" value="false"/>
+	</include>
+
+
+  <param name="robot_ipsa" command="xacro --inorder '$(find project_in424_description)/urdf/robot.xacro'"/>
+  <node name="mybot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
+   args="-urdf -param /robot_ipsa -x -14 -y -5 -z 0 -model robot" />
+
+  <node name="pose_robot" pkg="project_in424_description" type="correction.py"/>
+
+  <rosparam file="$(find project_in424_description)/config/$(arg world).yaml" command="load"/>
+</launch>
