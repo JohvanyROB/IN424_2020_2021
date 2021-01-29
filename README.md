@@ -47,7 +47,7 @@ sudo pip3 install rospkg
 In a terminal, paste the following instructions:
 
 ```bash
-cd ~/catkin_ws/src && git clone https://github.com/JohvanyROB/Evry_Project_2020.git
+cd ~/catkin_ws/src && git clone https://github.com/JohvanyROB/IN424_2020_2021.git
 
 cd ~/catkin_ws && catkin_make
 
