@@ -29,7 +29,7 @@ class Robot:
 def run_demo():
     '''Main loop'''
     robot = Robot()
-    while True:
+    while not rospy.is_shutdown():
         #Write your strategy here ...
         linear_velocity = 0
         angular_velocity = 0
