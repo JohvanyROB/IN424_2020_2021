@@ -3,6 +3,8 @@
 ### ROS dependencies with Python 3
 In a terminal, paste the following instructions ONE AFTER THE OTHER:
 ```bash
+sudo apt update && sudo apt upgrade
+
 sudo apt install python3-pip
 
 sudo pip3 install --upgrade pip
