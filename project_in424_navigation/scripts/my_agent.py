@@ -29,6 +29,7 @@ class Robot:
 def run_demo():
     '''Main loop'''
     robot = Robot()
+    rate = rospy.Rate(2)
     while not rospy.is_shutdown():
         #Write your strategy here ...
         linear_velocity = 0
@@ -38,7 +39,7 @@ def run_demo():
 
         #Finishing by publishing the desired speed. DO NOT TOUCH.
         robot.set_speed_angle(linear_velocity, angular_velocity)
-        rospy.sleep(0.5)
+        rate.sleep()
 
 
 if __name__ == "__main__":
