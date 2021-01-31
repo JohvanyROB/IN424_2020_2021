@@ -6,18 +6,23 @@ from sensor_msgs.msg import Range
 
 
 class Robot:
-    def __init__(self):
-        self.sonar = 0 #Sonar distance
+    def __init__(self, robot_name):
+        self.sonar = 0.0 #Sonar distance
+        self.robot_name = robot_name
+        self.ns = "/" + self.robot_name
 
         '''Listener and publisher'''
-        rospy.Subscriber("/sensor/sonar_front", Range, self.callbacksonar)
-        self.cmd_vel_pub = rospy.Publisher("/cmd_vel", Twist, queue_size=1)
+        rospy.Subscriber(self.ns + "/sensor/sonar_front", Range, self.callbacksonar)
+        self.cmd_vel_pub = rospy.Publisher(self.ns + "/cmd_vel", Twist, queue_size=1)
 
-    def callbacksonar(self,data):
+
+    def callbacksonar(self, data):
         self.sonar = data.range
+
 
     def get_sonar(self):
         return float(self.sonar)
+
 
     def set_speed_angle(self, linear_vel, angular_vel):
         cmd_vel = Twist()
@@ -28,7 +33,10 @@ class Robot:
 
 def run_demo():
     '''Main loop'''
-    robot = Robot()
+    robot_name = rospy.get_param("~robot_name")
+    robot = Robot(robot_name)
+    print("Robot {} is starting".format(robot_name))
+
     rate = rospy.Rate(2)
     while not rospy.is_shutdown():
         #Write your strategy here ...
@@ -44,6 +52,6 @@ def run_demo():
 
 if __name__ == "__main__":
     print("Running ROS..")
-    rospy.init_node("Strategy", anonymous = True)
+    rospy.init_node("Strategy", anonymous=True)
 
     run_demo()

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+  <arg name="name" default="robot_1"/>
+
+  <node pkg="project_in424_navigation" type="my_agent.py" name="$(arg name)" output="screen">
+    <param name="robot_name" value="$(arg name)"/>
+  </node>
+</launch>
