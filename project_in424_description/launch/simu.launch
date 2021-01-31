@@ -3,7 +3,7 @@
 
  <arg name="world" default="ipsa_1"/>
 
- <arg name="nbr_robot" default="3"/>
+ <arg name="nbr_robot" default="1"/>
 
   <!-- start world -->
   <param name="use_sim_time" value="true" />
