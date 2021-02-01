@@ -1,7 +1,11 @@
 # IN424_2020_2021
 
 ### ROS dependencies with Python 3
-In a terminal, paste the following instructions ONE AFTER THE OTHER:
+
+Connect to RDS with your login and password (https://app.theconstructsim.com/#/)
+Go to "My rosjects" and run the project that you created.
+
+In a terminal, follow the instructions ONE AFTER THE OTHER:
 ```bash
 sudo apt update && sudo apt install python3-pip
 
@@ -11,7 +15,7 @@ sudo pip3 install rospkg
 ```
 
 ## Clone the Project repository
-In a terminal, paste the following instructions:
+In the same terminal, follow the instructions ONE AFTER THE OTHER:
 
 ```bash
 cd ~/catkin_ws/src && git clone https://github.com/JohvanyROB/IN424_2020_2021.git
