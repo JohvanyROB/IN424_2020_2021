@@ -2,7 +2,7 @@
 
 ### ROS dependencies with Python 3
 
-Connect to RDS with your login and password (https://app.theconstructsim.com/#/)
+Connect to [RDS] (https://app.theconstructsim.com/#/) with your user and password
 Go to "My rosjects" and run the project that you created.
 
 In a terminal, follow the instructions ONE AFTER THE OTHER:
