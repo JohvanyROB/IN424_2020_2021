@@ -17,17 +17,26 @@ class Robot:
 
 
     def callbacksonar(self, data):
+        #DO NOT TOUCH
         self.sonar = data.range
 
 
     def get_sonar(self):
+        #DO NOT TOUCH
         return float(self.sonar)
+    
+    def constraint(self, val, min=-2.0, max=2.0):
+        #DO NOT TOUCH
+        if val < min: return min
+        if val > max: return max
+        return val
 
 
     def set_speed_angle(self, linear_vel, angular_vel):
+        #DO NOT TOUCH
         cmd_vel = Twist()
-        cmd_vel.linear.x = linear_vel
-        cmd_vel.angular.z = angular_vel
+        cmd_vel.linear.x = self.constraint(linear_vel)
+        cmd_vel.angular.z = self.constraint(angular_vel, min=-1, max=1)
         self.cmd_vel_pub.publish(cmd_vel)
 
     def euler_from_quaternion(x, y, z, w):
