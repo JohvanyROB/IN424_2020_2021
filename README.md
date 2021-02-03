@@ -9,9 +9,7 @@ Go to "My rosjects" and run the project that you created.
 
 In a terminal, follow the instructions **ONE AFTER THE OTHER**:
 ```bash
-sudo apt update && sudo apt install -y -q python3-pip
-
-sudo pip3 install --upgrade pip
+sudo apt update && sudo apt install -y python3-pip
 
 sudo pip3 install rospkg
 ```
