@@ -39,7 +39,7 @@ class Robot:
         cmd_vel.angular.z = self.constraint(angular_vel, min=-1, max=1)
         self.cmd_vel_pub.publish(cmd_vel)
 
-    def euler_from_quaternion(x, y, z, w):
+    def euler_from_quaternion(self, x, y, z, w):
         """
         Convert a quaternion into euler angles (roll, pitch, yaw)
         roll is rotation around x in radians (counterclockwise)
