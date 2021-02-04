@@ -22,3 +22,5 @@ cd ~/catkin_ws/src && git clone https://github.com/JohvanyROB/IN424_2020_2021.gi
 
 cd ~/catkin_ws && catkin_make && source ~/catkin_ws/devel/setup.bash
 ```
+
+You can now come back to the project subject.
